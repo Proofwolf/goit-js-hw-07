@@ -18,11 +18,7 @@ const galleryMarkup = galleryItems
 
 galleryEl.insertAdjacentHTML('beforeend', galleryMarkup);
 
-galleryEl.addEventListener('click', event => {
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-});
+
 new SimpleLightbox('.gallery a', {
   captions: true,
   captionType: 'attr',

@@ -39,7 +39,7 @@ onClose: (instance) => {
   galleryEl.addEventListener('keydown', event => {
     if (event.code === 'Escape') {
       instance.close();
-    }},  
+    }}),  
   function onEscKeyPress(event) {
     if (event.code === "Escape") {
       instance.close();
@@ -47,6 +47,5 @@ onClose: (instance) => {
 
 
 });
-
 
 

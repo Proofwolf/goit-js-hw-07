@@ -29,15 +29,17 @@ galleryEl.addEventListener('click', event => {
   const instance = basicLightbox.create(`
     <img src = ${event.target.dataset.source} width="800" height="600">
 `,{
- onShow: (instance) => {
-        document.addEventListener("keydown", onEscKeyPress);
-      },
 onClose: (instance) => {
   document.removeEventListener("keydown", onEscKeyPress);
 },
 });
 
   instance.show();
+  
+  galleryEl.addEventListener('keydown', event => {
+    if (event.code === 'Escape') {
+      instance.close();
+    }},  
   function onEscKeyPress(event) {
     if (event.code === "Escape") {
       instance.close();
@@ -46,5 +48,5 @@ onClose: (instance) => {
 
 });
 
-// console.log(galleryItems);
+
 

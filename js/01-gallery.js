@@ -49,30 +49,3 @@ function onImageClick(event) {
         }
     };
 };
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-  const instance = basicLightbox.create(`
-    <img src = ${event.target.dataset.source} width="800" height="600">
-`,{
-onClose: (instance) => {
-  document.removeEventListener("keydown", onEscKeyPress);
-},
-});
-
-  instance.show();
-  
-  galleryEl.addEventListener('keydown', event => {
-    if (event.code === 'Escape') {
-      instance.close();
-    }
-  });
-  function onEscKeyPress(event) {
-    if (event.code === "Escape") {
-      instance.close();
-    }}
-
-
-});
-
-
